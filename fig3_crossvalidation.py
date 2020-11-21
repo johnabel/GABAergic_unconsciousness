@@ -93,7 +93,7 @@ ax.set_xticklabels(['SDB', 'BWP', "PCA", "LDA"]*3)#, "CNN"]*3)
 # mnames_hr = ['SDB', 'BWP', "PCA", "LDA", "CNN"] + \
 #              [aa + '+HMM2' for aa in ['SDB', 'BWP', "PCA", "LDA", "CNN"]] + \
 #              [aa + '+HMM6' for aa in ['SDB', 'BWP', "PCA", "LDA", "CNN"]]
-mnames_hr = ['SDB', 'BWP', "PCA", "LDA", "CNN"] + \
+mnames_hr = ['SDB', 'BWP', "PCA", "LDA"] + \
              [aa + '+HMM2' for aa in ['SDB', 'BWP', "PCA", "LDA"]] + \
              [aa + '+HMM6' for aa in ['SDB', 'BWP', "PCA", "LDA"]]
 
