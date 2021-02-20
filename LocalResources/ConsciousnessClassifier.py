@@ -24,7 +24,7 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 ###### GLOBAL VARS #######
 ##########################
 # CNN features are the only ones not being generated online so we need file paths to where its stored on disk
-FP_BTLNCKS_VOLUNTEER = 'Volunteer/CNN/btlncks.feather'
+FP_BTLNCKS_VOLUNTEER = 'Data/Volunteer_CNN/btlnck_df.csv'
 
 n_pcs_cnn = 10 #number of principal components for PCA of CNN bottlenecks
 
@@ -780,7 +780,7 @@ def fit_pca_cnn(case_ids_train):
     pca_cnn : decomposition.pca.PCA
         fitted PCA to be used for validation data
     """
-    btlncks = pd.read_feather(FP_BTLNCKS_VOLUNTEER)
+    btlncks = pd.read_csv(FP_BTLNCKS_VOLUNTEER)
 
     # filter btlncks to only use cases in training set
     train_case_inds = [case_id in case_ids_train for case_id in btlncks.case_id]
@@ -808,7 +808,7 @@ def apply_pca_cnn(pca_cnn, case_ids):
         first 3 principal component of CNN bottleneck values for each window
         also contains times and labels because they don't line up with other features
     """
-    btlncks = pd.read_feather(FP_BTLNCKS_VOLUNTEER)
+    btlncks = pd.read_csv(FP_BTLNCKS_VOLUNTEER)
 
     # filter btlncks to only use cases in training set
     train_case_inds = [case_id in case_ids for case_id in btlncks.case_id]
